@@ -2,12 +2,15 @@ var read=require('readline-sync')
 import { addProduct } from "./service/addproduct"
 import { displayProduct } from "./service/displayproduct";
 import { deleteProduct } from "./service/deleteproduct";
+import { searchProduct } from "./service/searchproduct";
+
 
 let flag=true;
 while(flag==true){
     console.log("Press 1 to add Product in list");
     console.log("Press 2 to list all Products");
-    console.log("Press 3 to delete product from list");
+    console.log("Press 3 to search product from list");
+    console.log("Press 4 to delete product from list");
     let i=read.question();
     switch(i){
         case '1':{
@@ -26,6 +29,12 @@ while(flag==true){
             break;
         }
         case '3':{
+            let name=read.question("Enter your product name to search : ");
+            searchProduct(name);
+            read.question();
+            break;
+        }
+        case '4':{
             let name=read.question("Enter your product name to delete : ");
             deleteProduct(name);
             read.question();
