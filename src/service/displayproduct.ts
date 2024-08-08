@@ -1,4 +1,4 @@
-import { products } from "./addproduct";
+import { products } from "../model/products";
 
 export function displayProduct(){
     console.log(products);

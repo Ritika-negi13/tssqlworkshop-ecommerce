@@ -1,6 +1,7 @@
 import { products } from "../model/products";
+import { deleteProduct } from "./deleteproduct";
 
-export function deleteProduct(name:string){
+export function searchProduct(name:string){
     let i=products.findIndex((val)=>val.name.toLocaleLowerCase()==name.toLocaleLowerCase())
     if(i==-1)
     {
@@ -8,7 +9,7 @@ export function deleteProduct(name:string){
     }
     else
     {
-        products.splice(i, 1);
-        console.log("Product deleted")
+        console.log(products[i]);
+        deleteProduct(name);
     }
 }
